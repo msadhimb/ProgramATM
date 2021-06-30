@@ -1,1 +1,1 @@
-worker: ATM.py
+web: gunicorn -b :$PORT ATM:app
