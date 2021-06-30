@@ -1,1 +1,1 @@
-web: gunicorn ATM:app --log file -
+web:gunicorn ATM:app --log file -
