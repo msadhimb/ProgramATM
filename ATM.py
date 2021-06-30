@@ -1,21 +1,36 @@
 from getpass import getpass
-temp = [0]
-adhim = [0]
-ilham = [0]
-daffa = [0]
-akbar = [0]
-paksyaifur = [0]
-akses = {'Muhamad Salman Adhim Baqy' : adhim, 
-    'Ilham Maulana Putra' : ilham, 
-    'Daffa Radhitya Pratama Wina Putra' : daffa, 
-    'Akbar Priyo Santosa' : akbar, 
-    'Muhammad Syaifur Rohman' : paksyaifur
-}
-print("\n")
-print("\t Selamat Datang \n")
-print("Karena tidak ada kartu yang bisa dibaca maka")
-print("Masukkan nama lengkap anda \n" )
-nama = input("Masukkan nama lengkap anda (ex. Salman Adhim) = ")
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def First():
+    global temp
+    global adhim
+    global ilham
+    global daffa
+    global akbar
+    global paksyaifur
+    global akses
+    global nama
+    temp = [0]
+    adhim = [0]
+    ilham = [0]
+    daffa = [0]
+    akbar = [0]
+    paksyaifur = [0]
+    akses = {'Muhamad Salman Adhim Baqy' : adhim, 
+        'Ilham Maulana Putra' : ilham, 
+        'Daffa Radhitya Pratama Wina Putra' : daffa, 
+        'Akbar Priyo Santosa' : akbar, 
+        'Muhammad Syaifur Rohman' : paksyaifur
+    }
+    print("\n")
+    print("\t Selamat Datang \n")
+    print("Karena tidak ada kartu yang bisa dibaca maka")
+    print("Masukkan nama lengkap anda \n" )
+    nama = input("Masukkan nama lengkap anda (ex. Salman Adhim) = ")
+    password()
 
 def password():
     if nama in akses:
@@ -213,5 +228,5 @@ class ATM():
             print("\tInput yang anda masukkan salah. Selamat Tinggal")
             print('\n')
 
-
-password()
+if __name__=='__main__':
+    app.run()
