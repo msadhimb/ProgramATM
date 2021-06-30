@@ -1,1 +1,1 @@
-web:gunicorn ATM:app --log file -
+worker: ATM.py
