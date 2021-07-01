@@ -1,1 +1,1 @@
-worker: pythob ATM.py
+worker: python ATM.py
